@@ -1,5 +1,6 @@
 const { DynamoDB } = require('aws-sdk');
 const modelo = require('./../model/planeta');
+const uuidv1 = require('uuid/v1');
 const dynamoDb = new DynamoDB.DocumentClient();
 
 async function obtenerPlanetas (event) {
@@ -10,7 +11,7 @@ async function obtenerPlanetas (event) {
     let planeta = await obtenerPlanetasApiStarWars(idInicial);
     
     let planetaAtributoOrdenado = Object.entries(planeta).sort();
-    planetaAtributoOrdenado.push(["id",idInicial.toString()]);
+    planetaAtributoOrdenado.push(["id",uuidv1()]);
     let periodoRotacion = planetaAtributoOrdenado.sort().splice(11,1)
     planetaAtributoOrdenado.splice(9,0,periodoRotacion[0])
     let nombreDeCampos = Object.keys(modelo).sort();
