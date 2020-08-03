@@ -26,6 +26,16 @@ module.exports.obtenerPlanetas = async (event, context, callback) => {
     }
     
 }
+module.exports.llenarDynamo10x10 = async (event, context, callback) => {
+    try {
+        let data = {};
+        data = await llenarBaseDeDatos();
+        sendResponse(200, data, callback);
+    } catch (error) {
+        console.log(error);
+        sendResponse(500, {message : "Ocurrio un error en Lambda"}, callback);
+    }
+}
 
 function sendResponse(statusCode, data, callback) {
 	const response = {

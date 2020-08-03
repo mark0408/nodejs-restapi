@@ -7,6 +7,7 @@ async function obtenerPlanetas (event) {
 
   let response ={};
 
+  // Aqui cambiar idInicial
   for (let idInicial = 1; idInicial <= 10; idInicial++) {
     let planeta = await obtenerPlanetasApiStarWars(idInicial);
     
