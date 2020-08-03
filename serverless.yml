@@ -33,6 +33,12 @@ functions:
       - http:
           path: obtenerPlanetas
           method: get
+  llenarDynamo10x10:
+    handler: src/handler.llenarDynamo10x10
+    events:
+      - http:
+          path: llenarDynamo10x10
+          method: get
 
 
 resources:
