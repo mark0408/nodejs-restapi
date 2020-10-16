@@ -1,6 +1,6 @@
 # NODEJS SERVERLESS WITH DYNAMO
 
-1. Cloma el repo
+1. Clona el repositorio
 2. Instala el app en tu computador
 $ npm install
 3. Levanta esta app de manera local gracias a serverless - offline
